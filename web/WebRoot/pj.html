@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>管理评教项目</title>
+
+<script  language="JavaScript" type="text/javascript">
+
+function checkForm()  
+{  
+	  var t1 = document.getElementsByTagName("input");  
+       for(i=0;i<t1.length;i++)  
+       {  
+           if(t1[i].type == "checkbox")  
+           {  
+               if(!(t1[i].checked))  
+               {  
+                   t1[i].checked = true;  
+                   t1[i].value = "0";  
+               }  
+           }  
+       } 
+       return true;  
+}
+
+function checkbox(obj)
+{
+  if(obj.checked){
+    obj.value="1";
+  }else{
+    obj.value="0";  
+}
+}
+</script>
+
+</head>
+
+<body>
+<div class="container-fluid">
+		  <div class="row">
+			  <div class="col-md-10 col-md-offset-1">
+		  		<div class="jumbotron" style="background-color:#003C9D;">
+				  <h2 style="font-family:微软雅黑;color:#F0F8FF";>
+				  	&emsp;&emsp;&emsp;评教管理人员界面
+				  </h2>
+			  	</div>
+		 	 </div>
+	 	 </div>
+	  </div>
+	  
+
+	<h4>若未开启任意一项，则评教不开启</h4>
+	  <div class="container-fluid">
+	  	<div class="row">
+		  <div class="col-md-5 col-md-offset-4">
+	
+	<form action="pingjiao.jsp" method="post">
+	<input type="checkbox" id="cb" name="pj" value="1" >开启备课得分评价
+	<br>
+	<input type="checkbox" id="cb" name="pj" value="1" >开启上课及时评价
+	<br>
+	<input type="checkbox" id="cb" name="pj" value="1" >开启讲课技巧评价
+	<br>
+	<input type="checkbox" id="cb" name="pj" value="1" >开启课后辅导评价
+	<br>
+	<input type="checkbox" id="cb" name="pj" value="1" >开启其他方面评价
+	<br><br>
+	<input type="submit" value="完成修改" onclick="checkForm()">
+	</form> 
+	</div>
+	</div>
+	</div>
+</body>
+</html>
